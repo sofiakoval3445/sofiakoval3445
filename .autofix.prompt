@@ -1,0 +1,21 @@
+Почини исходники проекта SkyRShLine (платформа: unity, тикет ANDROID-3685). Раунд 1 из 3.
+
+Проект: C:/AndroidWorkspace/projects/SkyRShLine
+Правила генерации (обязательны): C:/AndroidWorkspace/CLAUDE-unity.md
+Полный лог пайплайна: C:/AndroidWorkspace/projects/SkyRShLine/.unity-pipeline.log
+
+ГЛАВНОЕ — жалоба человека, она важнее находок гейтов (он видел это на устройстве):
+Need to regenerate game icon to new rules of unity pipeline (do not using references from pngs from jira task)
+Найди, КАКОЙ объект/код рисует то, на что жалуются, и почини причину. Скриншоты
+прошлой сборки: C:/AndroidWorkspace/projects/SkyRShLine/prompts/screenshots (могут быть старше кода).
+
+Требования:
+  * Меняй ТОЛЬКО файлы проекта. Шаблонные файлы не трогай (правило §00). Чинить через
+    свои объекты/override (C.2, C.18), а не правкой базовых prefab шаблона.
+  * Правь причину, а не симптом. НЕ ослабляй и не обходи проверки, ничего не удаляй
+    ради прохождения гейта.
+  * ПЕРЕД ОКОНЧАНИЕМ сам прогони ВСЕ гейты пайплайна и добейся exit 0:
+        bash C:/AndroidWorkspace/scripts/lib/unity-gates.sh C:/AndroidWorkspace/projects/SkyRShLine
+    Если гейт падает — чини и прогоняй снова. Гейт с пометкой soft допустим, HARD — нет.
+  * Сборку не запускай и пайплайн не трогай — пересборку и сверку скриншотов сделает автофикс.
+  * В конце ответа одной строкой: что именно изменил (файлы и суть).
