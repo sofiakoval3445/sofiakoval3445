@@ -1,0 +1,136 @@
+{
+  "style": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting",
+  "palette": [
+    "#0B1022",
+    "#10162C",
+    "#1A2345",
+    "#232E57",
+    "#2D7CFF",
+    "#8B45D3",
+    "#F2C44F",
+    "#F04B63",
+    "#F5F7FF",
+    "#9AA6C9"
+  ],
+  "notes": "One art style for the whole project, repeated word for word at the head of every prompt (rule F.1c); photographic cues are never used. Every sprite that takes part in the mechanic declares its orientation in words (rule C.8) - the symmetric ones say so, so nothing is mirrored by accident, and the two ledges are generated separately rather than one being flipped. No prompt names a background colour because the pipeline cuts the backdrop away (rule F.1b); atmosphere and glow spill live in the two backgrounds instead. sprite_ledge_left, sprite_ledge_right, sprite_barrier and sprite_wall_segment are 9-sliced in their .meta and stretch along one axis, so their prompts describe their ENDS and a flat repeating middle rather than any geometry (rule F.1d). No prompt contains the app name and no sprite carries lettering of any kind (hard rule 1); sprite_mark is an abstract emblem, not a wordmark.",
+  "assets": [
+    {
+      "name": "bg_main",
+      "type": "bg",
+      "transparent": false,
+      "target": "Assets/Art/Textures/_BASE/Backgrounds/BG_main.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, a tall technical lift shaft inside a tower seen head on and receding upward, deep navy walls ribbed with steel bracing and electric blue power conduits converging toward the top of the frame, a warm golden glow far above where the shaft ends, the middle band of the image kept calm and uncluttered as a safe area for menu controls, the lower third quiet and dark under the controls, corners falling into near black, vertical 9:16 portrait composition, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "bg_game",
+      "type": "bg",
+      "transparent": false,
+      "target": "Assets/Art/Textures/_BASE/Backgrounds/BG_game.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, the same lift shaft with its power dimmed, muted navy rock and steel, a faint technical grid etched over the walls, conduits reduced to a low blue hum, the whole centre deliberately low contrast and uncluttered so gameplay pieces read on top of it, the top strip and the bottom strip darkened so a HUD stays legible, soft vignette in the corners, vertical 9:16 portrait composition, no text, no letters, no logos, no watermark, not a photo, not photorealistic"
+    },
+    {
+      "name": "sprite_container",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "front view, upright, nose UP, horizontally symmetric, never mirrored",
+      "target": "Assets/Art/Sprites/sprite_container.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single energy container, a compact armoured cube with rounded corners and a molten golden core glowing through a slot in its face, thin blue containment bands wrapping its edges, seen straight on and standing upright, horizontally symmetric so it reads the same facing either wall, crisp readable silhouette, one subject centred and whole in frame, no text"
+    },
+    {
+      "name": "sprite_ledge_left",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "side view, the mounting block is at the LEFT end and the shelf runs RIGHT from it",
+      "target": "Assets/Art/Sprites/sprite_ledge_left.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single docking shelf for a cargo lift, a heavy bracket block at the LEFT end bolted to a wall and a flat steel platform running away to the RIGHT of it, the right end finished with a clean rounded lip, the middle of the platform flat, plain and uniform so it can be repeated, a thin blue light strip along the platform edge, seen from the side, one subject centred and whole in frame, no text"
+    },
+    {
+      "name": "sprite_ledge_right",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "side view, the mounting block is at the RIGHT end and the shelf runs LEFT from it, drawn separately and never a mirror of the left one",
+      "target": "Assets/Art/Sprites/sprite_ledge_right.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single docking shelf for a cargo lift, a heavy bracket block at the RIGHT end bolted to a wall and a flat steel platform running away to the LEFT of it, the left end finished with a clean rounded lip, the middle of the platform flat, plain and uniform so it can be repeated, a thin blue light strip along the platform edge, seen from the side, one subject centred and whole in frame, no text"
+    },
+    {
+      "name": "sprite_barrier",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "horizontal beam, symmetric on both axes, never mirrored",
+      "target": "Assets/Art/Sprites/sprite_barrier.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single horizontal force barrier, a bar of violet energy held between two identical emitter caps, the left end and the right end exactly the same so the bar reads as finished at both ends, the middle a flat even band of glowing violet with faint hazard chevrons so it can be repeated along its length, symmetric on both axes, one subject centred and whole in frame, no text"
+    },
+    {
+      "name": "sprite_wall_segment",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "vertical tile, entering at the TOP edge and leaving at the BOTTOM edge, symmetric left to right",
+      "target": "Assets/Art/Sprites/sprite_wall_segment.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single vertical section of a shaft wall, dark navy panelling with riveted steel ribs and a faint blue conduit threading through it, the TOP edge and the BOTTOM edge cut flat and identical so one section continues seamlessly into the next, the middle flat, plain and uniform so it can be repeated, symmetric left to right, one subject centred and whole in frame, no text"
+    },
+    {
+      "name": "sprite_beacon",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "front view, nose UP, horizontally symmetric",
+      "target": "Assets/Art/Sprites/sprite_beacon.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single beacon lamp on a short steel mast, a tapered golden lantern with a glowing core and a ring of blue guide lights around its base, standing upright with the lamp at the top, horizontally symmetric, taller than it is wide, crisp readable silhouette, one subject centred and whole in frame, no text"
+    },
+    {
+      "name": "sprite_lock_glow",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "radially symmetric, no facing",
+      "target": "Assets/Art/Sprites/sprite_lock_glow.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single soft circular burst of light, a bright warm centre fading outward through a thin ring of sparks, radially symmetric with no facing direction, nothing but the glow itself, one subject centred and whole in frame, no text"
+    },
+    {
+      "name": "sprite_integrity_pip",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "symmetric, no facing",
+      "target": "Assets/Art/Sprites/sprite_integrity_pip.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single small hexagonal plate badge with a glossy domed centre and a thin bevelled rim, a compact status indicator, symmetric with no facing direction, bold and readable at small size, one subject centred and whole in frame, no text"
+    },
+    {
+      "name": "sprite_section_marker",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "symmetric, no facing",
+      "target": "Assets/Art/Sprites/sprite_section_marker.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single short horizontal tick bar with rounded ends and a soft inner glow, a simple progress segment, symmetric with no facing direction, bold and readable at small size, one subject centred and whole in frame, no text"
+    },
+    {
+      "name": "sprite_mark",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "symmetric, no facing",
+      "target": "Assets/Art/Sprites/sprite_mark.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single abstract emblem, a bold hexagonal containment ring of brushed steel with a glowing golden core suspended at its centre and two short blue guide bars entering from the left and the right, a clean geometric badge, symmetric with no facing direction, crisp readable silhouette, one subject centred and whole in frame, no text, no letters, no lettering of any kind"
+    },
+    {
+      "name": "icon_pause",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "symmetric, no facing",
+      "target": "Assets/Art/Sprites/icon_pause.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single pause glyph, two thick vertical bars with rounded ends side by side, moulded as a glossy solid shape with a soft rim light, symmetric with no facing direction, bold and readable at small size, one subject centred and whole in frame, no text"
+    },
+    {
+      "name": "icon_back",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "arrow pointing LEFT, asymmetric, never mirrored",
+      "target": "Assets/Art/Sprites/icon_back.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single back arrow glyph, a thick chevron with its point at the LEFT and its tail to the right, moulded as a glossy solid shape with a soft rim light, clearly pointing to the LEFT, bold and readable at small size, one subject centred and whole in frame, no text"
+    },
+    {
+      "name": "icon_close",
+      "type": "sprite",
+      "transparent": true,
+      "orientation": "symmetric, no facing",
+      "target": "Assets/Art/Sprites/icon_close.png",
+      "prompt": "stylized 3D game art, chunky glossy forms, neon rim-light, deep navy lighting, one single close glyph, two thick bars with rounded ends crossing at the centre to form an X, moulded as a glossy solid shape with a soft rim light, symmetric with no facing direction, bold and readable at small size, one subject centred and whole in frame, no text"
+    }
+  ]
+}

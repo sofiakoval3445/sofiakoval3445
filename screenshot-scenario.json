@@ -1,0 +1,13 @@
+{
+  "notes": "tapFrac is normalised SCREEN space measured from the top-left. UI taps are computed from the real RectTransforms over the 1242x2688 canvas reference, with the letterbox correction baked in: the CanvasScaler is Expand with match 0, so on the 1080x2400 emulator the canvas resolves to 1242x2760 units, and SafeArea's AspecterSA child is FitInParent at 1242/2688 = 0.46205, which trims the UI layer back to 1242x2688 units - 1080x2337.4 px, letterboxed 31.3 px top and bottom. A UI rect sitting at fraction u of the panel therefore lands at 0.013042 + u * 0.973917 of the screen measured from the BOTTOM, and tapFracY is one minus that. Width is unaffected: the UI layer fills the screen horizontally, so a UI x of 1242 units maps straight onto the full width. DefaultPanel and its Content are both full-stretch, so the anchors the menu is built with are those u values directly: PLAY 0.260 (the template's scene-loading button, resized to 760x168 at a point anchor per rule G.3), ROUTES 0.165, overlay CLOSE 0.915 at x 0.86. The pause button is the right-hand slot of the HUD bracket in the game scene: the bracket body is centred at u 0.899196 and its slot centre sits at x 1113 of 1242 = 0.8961. The two gameplay taps are plain presses in the middle of the shaft - a press is what drives the climb, and the play band deliberately ignores the top and bottom fifths of the screen so a reach for pause is never read as a climb. Sections 1 and 2 carry no barriers, so both captured climbs land cleanly and each frame shows a different section number, a different wall and a further-scrolled shaft.",
+  "steps": [
+    { "wait": 3, "shot": "01_SplashScreen" },
+    { "waitLoader": true, "shot": "02_MenuScreen" },
+    { "tapFrac": [0.500, 0.8263], "label": "ROUTES", "wait": 2, "shot": "03_RouteSheet" },
+    { "tapFrac": [0.860, 0.0958], "label": "CLOSE_ROUTES", "wait": 1.5 },
+    { "tapFrac": [0.500, 0.7337], "label": "PLAY", "waitLoader": true, "wait": 4, "shot": "04_GameScreen_idle" },
+    { "tapFrac": [0.500, 0.5500], "label": "RISE_TO_SECTION_02", "wait": 3, "shot": "05_GameScreen_climb" },
+    { "tapFrac": [0.500, 0.5500], "label": "RISE_TO_SECTION_03", "wait": 3, "shot": "06_GameScreen_locked" },
+    { "tapFrac": [0.8961, 0.1113], "label": "PAUSE", "wait": 2, "shot": "07_PausePop" }
+  ]
+}
